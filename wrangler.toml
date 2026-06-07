@@ -17,9 +17,9 @@ fallthrough = true
 # 微信公众号 AppID
 WECHAT_APPID = "wx61330ef0702949b8"
 # 前端首页地址（登录成功后跳转）
-FRONTEND_URL = "https://aistocklink.cn"
-COOKIE_DOMAIN = "aistocklink.cn"
-CORS_ALLOW_ORIGIN = "https://aistocklink.cn"
+FRONTEND_URL = "https://stock.102465.xyz"
+COOKIE_DOMAIN = "102465.xyz"
+CORS_ALLOW_ORIGIN = "https://stock.102465.xyz"
 
 # 大模型评价接口地址
 OPENAI_API_BASE_URL = "https://gen.pollinations.ai/v1/chat/completions"
@@ -43,7 +43,7 @@ database_name = "aistock"
 database_id = "f6efa1f1-4414-491c-a5d6-809fb1adfb8d" # 运行 wrangler d1 create aistock 后填入
 
 [[routes]]
-pattern = "extapi.aistocklink.cn"
+pattern = "stock-api.102465.xyz"
 custom_domain = true
 
 [observability]
