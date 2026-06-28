@@ -1,6 +1,7 @@
 /**
  * JWT 工具 — 基于 Web Crypto API (HMAC-SHA256)
  * 适用于 Cloudflare Workers 环境
+ * 支持微信认证和账密认证
  */
 
 function base64UrlEncode(data: Uint8Array): string {
@@ -38,8 +39,12 @@ async function getSigningKey(secret: string): Promise<CryptoKey> {
 }
 
 export interface JwtPayload {
-    openid: string;
-    nickname?: string;
+    openid?: string;           // 微信 openid（微信登录时填充）
+    userId?: number;           // 用户 ID（账密登录时填充）
+    username?: string;         // 用户名
+    email?: string;            // 邮箱
+    nickname?: string;         // 昵称
+    auth_method?: 'wechat' | 'password';  // 认证方式
     iat: number;
     exp: number;
 }
